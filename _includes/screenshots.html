@@ -1,0 +1,16 @@
+<section class="page gallery">
+        {% for vm in site.vms %}
+        <div class="gallery-item">
+
+                <h3>{{ vm.title }}</h3>
+                {% if vm.download %}<a href="{{ vm.download }}"><h4><i class="fas fa-download"></i></h4></a>{% else %}<h4>no downloads</h4>{% endif %}
+            <a href="{{ vm.url }}">
+                {% if vm.screenshot %}
+                <img src="{{ site.baseurl }}/p/assets/screens/{{ vm.screenshot }}" alt="Screenshot" class="screenshot" />
+                {% else %}
+                <div class="placeholder screenshot"></div>
+                {% endif %}
+            </a>
+        </div>
+        {% endfor %}
+</section>
